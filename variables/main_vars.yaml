@@ -8,6 +8,11 @@ bootstrap_packages:
 app_packages:
   - httpd
   - mysql
+  - epel-release
+
+php_package:
+  - php72
+
 
 database_packages:
   - mariadb-server
