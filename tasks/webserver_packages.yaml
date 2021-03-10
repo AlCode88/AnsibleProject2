@@ -36,3 +36,9 @@
     name: "{{ php_package }}"
     state: present
     enablerepo: "remi-*,epel,base"
+
+- name: Download Wordpress
+  when: ansible_facts ['hostname'] == "webserver"
+  get_url:
+    url: https://wordpress.org/latest.tar.gz
+    dest: /tmp/wordpress.tar.gz
