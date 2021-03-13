@@ -37,6 +37,13 @@
     state: present
     enablerepo: "remi-*,epel,base"
 
+- name: Create Link for PHP
+  when: ansible_facts['hostname'] == "webserver"
+  file:
+    src: /usr/bin/php72
+    dest: /usr/bin/php
+    state: link
+
 #- name: Download Wordpress
 #  when: ansible_facts ['hostname'] == "webserver"
 #  get_url:
