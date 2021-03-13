@@ -2,5 +2,5 @@
   when: ansible_facts ['hostname'] == "webserver"
   systemd:
     name: httpd
-    state: started
+    state: restarted
     enabled: yes
