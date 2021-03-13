@@ -1,0 +1,5 @@
+- name: start Apache
+  when: ansible_facts ['hostname'] == "webserver"
+  systemd:
+    name: httpd
+    state: started
